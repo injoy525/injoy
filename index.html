@@ -1,39 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>In Joy — Travel Content Creator</title>
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#061a28;color:#fff}a{text-decoration:none;color:inherit}
-.hero{min-height:100vh;position:relative;overflow:hidden;padding:28px 6vw 9vh;display:flex;align-items:flex-end;background:linear-gradient(#12608a 0%,#6da9c6 42%,#173d3d 43%,#0d2927 100%)}
-.hero:before{content:"";position:absolute;inset:0;background:
-radial-gradient(ellipse at 80% 22%,#a8c9dc 0 4%,transparent 28%),
-linear-gradient(160deg,transparent 40%,#345e6c 41% 48%,transparent 49%),
-linear-gradient(165deg,transparent 44%,#224d5a 45% 54%,transparent 55%),
-linear-gradient(180deg,transparent 48%,#153c38 49% 100%)}
-.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:
-repeating-linear-gradient(135deg,transparent 0 34px,rgba(20,28,29,.9) 35px 43px,transparent 44px 75px),
-linear-gradient(180deg,rgba(11,36,35,.2),#071b24);opacity:.95}
-nav{position:absolute;top:25px;left:6vw;right:6vw;z-index:4;display:flex;justify-content:space-between;align-items:center}.logo{font-size:34px;font-style:italic;font-family:cursive}.links{display:flex;gap:38px;font-size:13px;letter-spacing:2px}.links a:first-child{border-bottom:2px solid #fff;padding-bottom:10px}
-.hero-copy{position:relative;z-index:3;max-width:650px}.eyebrow{font-size:13px;letter-spacing:6px;margin-bottom:18px}.hero h1{font-family:cursive;font-size:clamp(70px,10vw,150px);line-height:.8;margin:0}.tagline{font-family:cursive;font-size:34px;margin:25px 0}.lead{font-size:18px}.buttons{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}.btn{padding:15px 23px;border-radius:30px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:bold}.primary{background:#087bc9;border-color:#087bc9}
-.character{position:absolute;z-index:3;right:10%;bottom:0;font-size:170px;filter:drop-shadow(0 12px 8px #0008)}.note{position:absolute;right:4%;top:40%;z-index:3;font-family:cursive;font-size:21px;text-align:center}.scroll{position:absolute;right:3%;bottom:40px;z-index:4}
-.page2{min-height:100vh;padding:110px 7vw;background:linear-gradient(90deg,#061d2b,#174866 60%,#7da9bd);position:relative;overflow:hidden}.page2:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(175deg,transparent,#123b52),repeating-linear-gradient(160deg,transparent 0 50px,#254f64 51px 54px);opacity:.7}.content{position:relative;z-index:2;max-width:1150px;margin:auto}.page2 h2{font:500 clamp(48px,7vw,90px) Georgia;margin:0}.intro{max-width:680px;font-size:18px;line-height:1.8;margin-top:25px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:55px}.card{padding:30px;border:1px solid #ffffff44;border-radius:24px;background:#06223899;backdrop-filter:blur(8px)}.card h3{font:500 34px Georgia;margin:0 0 14px}.card p{line-height:1.7;color:#dce8ed}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{padding:8px 11px;border:1px solid #ffffff44;border-radius:20px;font-size:12px}.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.skill{padding:17px;border:1px solid #ffffff22;border-radius:16px;background:#ffffff12}.social{margin-top:45px}
-footer{text-align:center;padding:24px;background:#03131f;color:#ccd9df}
-@media(max-width:800px){.links{display:none}.character{right:2%;font-size:100px;opacity:.65}.grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.hero{min-height:90vh}}
-@media(max-width:480px){.skills{grid-template-columns:1fr}.hero h1{font-size:76px}.tagline{font-size:26px}}
-</style>
+<meta name="description" content="In Joy — student travel content creator portfolio.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<main>
 <section class="hero" id="home">
-<nav><a class="logo" href="#home">In Joy</a><div class="links"><a href="#home">HOME</a><a href="#journey">THE JOURNEY</a><a href="#stories">THE STORIES</a><a href="#contact">CONTACT</a></div></nav>
-<div class="hero-copy"><div class="eyebrow">TRAVEL CONTENT CREATOR</div><h1>In Joy</h1><div class="tagline">— Que Sera, Sera</div><p class="lead">Turning journeys into stories you can feel.</p><div class="buttons"><a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank">▶ Watch My Content</a><a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank">◎ Follow Me</a></div></div>
-<div class="character">🧑🏻‍🦱🐕</div><div class="note">New places.<br>New stories.<br>Same me.</div><div class="scroll">Scroll ↓</div>
+<nav class="nav">
+<a class="logo" href="#home">In Joy</a>
+<div class="nav-links">
+<a class="active" href="#home">Home</a>
+<a href="#journey">The Journey</a>
+<a href="stories.html">The Stories</a>
+<a href="stories.html#contact">Contact</a>
+</div>
+</nav>
+<div class="hero-content">
+<p class="eyebrow">Travel Content Creator</p>
+<h1>In Joy</h1>
+<div class="motto">Que Sera, Sera</div>
+<p class="tagline">Turning journeys into stories you can feel.</p>
+<div class="actions">
+<a class="btn primary" href="stories.html">▶ Watch My Content</a>
+<a class="btn outline" href="stories.html#contact">◎ Follow Me</a>
+</div>
+</div>
+<div class="hero-note">New places.<br>New stories.<br>Same me.</div>
+<div class="scroll">Scroll ↓</div>
 </section>
-<section class="page2" id="journey"><div class="content"><div class="eyebrow">TRAVEL PHILOSOPHY</div><h2>Beauty is everywhere<br>you just have to notice it.</h2><p class="intro">Not just places, but the people, cultures and little moments that make the journey special. I create travel stories around mountains, villages, local communities, road trips, camping and outdoor places.</p>
-<div class="grid" id="stories"><article class="card"><div class="eyebrow">FEATURED DOCUMENTARY</div><h3>Eunpyeong Hanok Village</h3><p>A documentary about a village that feels like a strong example of modernization while keeping its historical culture and traditional architecture.</p><div class="tags"><span class="tag">Culture & History</span><span class="tag">Architecture</span><span class="tag">Travel Documentary</span></div></article>
-<article class="card"><div class="eyebrow">WHAT I CREATE</div><h3>Stories from the road</h3><p>Cinematic landscapes, the journey itself, personal experiences, voice-over storytelling and short-form travel videos.</p><div class="tags"><span class="tag">Mountains</span><span class="tag">Villages</span><span class="tag">Road Trips</span><span class="tag">Camping</span><span class="tag">Nature</span></div></article></div>
-<div style="margin-top:55px"><div class="eyebrow">CREATIVE SKILLS</div><div class="skills"><div class="skill">🎥 Video Shooting</div><div class="skill">✂️ Video Editing</div><div class="skill">📸 Photography</div><div class="skill">🎙️ Voice-over</div><div class="skill">📝 Storytelling</div><div class="skill">🌍 Travel Planning</div><div class="skill">📱 Social Content</div><div class="skill">🎨 Creative Direction</div></div></div>
-<div class="social" id="contact"><a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank">YouTube · @injoy</a> <a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank">Instagram · @itsmerahul-525</a></div>
-</div></section><footer>In Joy · Que Sera, Sera · Travel Content Creator</footer>
-</body></html>
+
+<section class="journey" id="journey">
+<div class="journey-inner">
+<div>
+<p class="eyebrow">Travel Philosophy</p>
+<h2>Beauty is everywhere —<br>you just have to notice it.</h2>
+<div class="line"></div>
+<p class="body-copy">Not just places, but the people, cultures and little moments that make the journey special.</p>
+</div>
+<a class="explore" href="stories.html">Explore<br>More <span>→</span></a>
+</div>
+</section>
+</main>
+</body>
+</html>
