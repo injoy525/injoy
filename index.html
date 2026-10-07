@@ -3,127 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Car Race Game</title>
+<title>In Joy — Travel Content Creator</title>
+<meta name="description" content="In Joy — cinematic travel stories, mountains, villages, culture, road trips and outdoor adventures.">
 <style>
+:root{--blue:#0a3550;--light:#eef6f9;--line:rgba(255,255,255,.28)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#111;font-family:Arial,sans-serif;overflow:hidden;text-align:center;color:#fff}
-h1{margin:10px 0;font-size:28px}
-#score{margin:8px;font-size:20px}
-#game{position:relative;width:400px;height:600px;margin:auto;overflow:hidden;background:#333;border:5px solid #fff}
-.line{position:absolute;width:8px;height:80px;background:#fff;left:50%;transform:translateX(-50%)}
-#player,.enemy{position:absolute;width:55px;height:95px;border-radius:12px;border:3px solid #fff}
-#player{bottom:25px;left:172px;background:red;z-index:5}
-.enemy{background:#ffd21f;z-index:4}
-.window{position:absolute;width:35px;height:25px;background:#8fd3ff;left:7px;top:10px;border-radius:5px}
-.enemy .window{background:#222}
-#player:before,#player:after,.enemy:before,.enemy:after{content:"";position:absolute;width:12px;height:25px;background:#000;top:15px;border-radius:4px}
-#player:before,.enemy:before{left:-8px}
-#player:after,.enemy:after{right:-8px}
-#gameOver{display:none;position:absolute;inset:0;background:rgba(0,0,0,.8);z-index:20;align-items:center;justify-content:center;flex-direction:column}
-#gameOver h2{font-size:42px;margin-bottom:15px}
-button{padding:12px 25px;font-size:18px;border:0;border-radius:8px;cursor:pointer}
-#instructions{margin-top:10px;font-size:15px}
-@media(max-width:450px){#game{width:95vw;height:75vh}}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#061a28;color:#fff}
+a{color:inherit;text-decoration:none}
+.hero{
+  min-height:100vh;position:relative;display:flex;align-items:flex-end;padding:0 7vw 9vh;
+  background:linear-gradient(90deg,rgba(3,18,28,.18),rgba(3,18,28,.04)),url("injoy-home-design(4).png") center/cover no-repeat;
+}
+.hero-actions{position:relative;z-index:2;display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:14px 22px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(8,42,62,.35);backdrop-filter:blur(8px);font-weight:700;transition:.25s}
+.btn.primary{background:#0879c8;border-color:#0879c8}
+.btn:hover{transform:translateY(-2px)}
+.stories{
+  min-height:100vh;padding:100px 7vw;
+  background:linear-gradient(90deg,rgba(3,22,36,.9),rgba(3,22,36,.55)),url("injoy-home-design(4).png") center bottom/cover no-repeat;
+}
+.container{max-width:1150px;margin:auto}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#cfe2eb;margin-bottom:18px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+h2{font-size:clamp(2.8rem,6vw,5.5rem);line-height:1}
+.lead{max-width:700px;margin-top:24px;font-size:1.1rem;line-height:1.8;color:#e1edf2}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:55px}
+.card{padding:32px;border:1px solid var(--line);border-radius:24px;background:rgba(3,26,42,.48);backdrop-filter:blur(10px)}
+.card h3{font-size:2rem;margin-bottom:14px}
+.card p{line-height:1.75;color:#dce8ed}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{padding:8px 11px;border:1px solid var(--line);border-radius:99px;font-size:.8rem}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.skill{padding:18px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);font-weight:600}
+.social{margin-top:55px;display:flex;gap:12px;flex-wrap:wrap}
+footer{padding:25px 7vw;background:#04131f;text-align:center;color:#c9d8de;font-size:.85rem}
+@media(max-width:800px){.hero{min-height:78vh;padding:0 6vw 6vh;background-position:center top}.grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.stories{padding:75px 6vw}}
+@media(max-width:480px){.hero{min-height:65vh}.skills{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<h1>🏎️ CAR RACE</h1>
-<div id="score">Score: 0</div>
-<div id="game">
-  <div id="player"><div class="window"></div></div>
-  <div id="gameOver">
-    <h2>GAME OVER</h2>
-    <p id="finalScore">Score: 0</p><br>
-    <button onclick="restartGame()">Restart</button>
+<section class="hero" id="home">
+  <div class="hero-actions">
+    <a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank" rel="noopener">▶ Watch My Content</a>
+    <a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank" rel="noopener">◎ Follow Me</a>
   </div>
-</div>
-<div id="instructions">⬅️ Left &nbsp;&nbsp; ➡️ Right &nbsp;&nbsp; | &nbsp;&nbsp; Avoid the cars!</div>
-
-<script>
-const game=document.getElementById("game");
-const player=document.getElementById("player");
-const scoreText=document.getElementById("score");
-const gameOverScreen=document.getElementById("gameOver");
-const finalScore=document.getElementById("finalScore");
-let playerX=172,score=0,speed=5,gameRunning=true,enemies=[],lines=[];
-
-for(let i=0;i<8;i++){
-  const line=document.createElement("div");
-  line.className="line";
-  line.style.top=(i*90-80)+"px";
-  game.appendChild(line);
-  lines.push({element:line,y:i*90-80});
-}
-
-document.addEventListener("keydown",e=>{
-  if(!gameRunning)return;
-  if(e.key==="ArrowLeft"||e.key.toLowerCase()==="a")playerX-=30;
-  if(e.key==="ArrowRight"||e.key.toLowerCase()==="d")playerX+=30;
-  playerX=Math.max(20,Math.min(325,playerX));
-  player.style.left=playerX+"px";
-});
-
-function createEnemy(){
-  const enemy=document.createElement("div");
-  enemy.className="enemy";
-  enemy.innerHTML='<div class="window"></div>';
-  const x=Math.floor(Math.random()*6)*55+10;
-  enemy.style.left=x+"px";
-  enemy.style.top="-110px";
-  game.appendChild(enemy);
-  enemies.push({element:enemy,x,y:-110});
-}
-
-function collision(a,b){
-  const A=a.getBoundingClientRect(),B=b.getBoundingClientRect();
-  return !(A.bottom<B.top||A.top>B.bottom||A.right<B.left||A.left>B.right);
-}
-
-function gameLoop(){
-  if(!gameRunning)return;
-  lines.forEach(line=>{
-    line.y+=speed;
-    if(line.y>600)line.y=-80;
-    line.element.style.top=line.y+"px";
-  });
-
-  for(let i=enemies.length-1;i>=0;i--){
-    const enemy=enemies[i];
-    enemy.y+=speed;
-    enemy.element.style.top=enemy.y+"px";
-
-    if(collision(player,enemy.element)){endGame();return}
-
-    if(enemy.y>650){
-      enemy.element.remove();
-      enemies.splice(i,1);
-      score++;
-      scoreText.textContent="Score: "+score;
-      if(score%5===0)speed+=0.7;
-    }
-  }
-  requestAnimationFrame(gameLoop);
-}
-
-setInterval(()=>{if(gameRunning)createEnemy()},1200);
-
-function endGame(){
-  gameRunning=false;
-  finalScore.textContent="Score: "+score;
-  gameOverScreen.style.display="flex";
-}
-
-function restartGame(){
-  enemies.forEach(e=>e.element.remove());
-  enemies=[];
-  playerX=172;score=0;speed=5;
-  player.style.left=playerX+"px";
-  scoreText.textContent="Score: 0";
-  gameOverScreen.style.display="none";
-  gameRunning=true;
-  gameLoop();
-}
-gameLoop();
-</script>
+</section>
+<section class="stories" id="stories">
+  <div class="container">
+    <div class="eyebrow">The Journey · The Stories</div>
+    <h2>Travel is more<br>than a destination.</h2>
+    <p class="lead">I create travel stories around mountains, villages, local communities, road trips, camping and outdoor places. My goal is to capture the journey, culture and small moments that help my audience feel like they were there with me.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="eyebrow">Featured Documentary</div>
+        <h3>Eunpyeong Hanok Village</h3>
+        <p>A documentary-style travel story about a village that shows how modernization can exist while keeping historical culture and traditional architecture.</p>
+        <div class="tags"><span class="tag">Culture & History</span><span class="tag">Architecture</span><span class="tag">Travel Documentary</span></div>
+      </article>
+      <article class="card">
+        <div class="eyebrow">What I Create</div>
+        <h3>Stories from the road</h3>
+        <p>Cinematic landscapes, the journey itself, personal experiences, reactions, voice-over storytelling and short-form travel videos.</p>
+        <div class="tags"><span class="tag">Mountain Videos</span><span class="tag">Travel Vlogs</span><span class="tag">Road Trips</span><span class="tag">Camping</span><span class="tag">Nature</span></div>
+      </article>
+    </div>
+    <div style="margin-top:65px">
+      <div class="eyebrow">Creative Skills</div>
+      <div class="skills">
+        <div class="skill">🎥 Video Shooting</div><div class="skill">✂️ Video Editing</div><div class="skill">📸 Photography</div><div class="skill">🎙️ Voice-over</div>
+        <div class="skill">📝 Storytelling</div><div class="skill">🌍 Travel Planning</div><div class="skill">📱 Social Content</div><div class="skill">🎨 Creative Direction</div>
+      </div>
+    </div>
+    <div class="social">
+      <a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank" rel="noopener">YouTube · @injoy</a>
+      <a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank" rel="noopener">Instagram · @itsmerahul-525</a>
+    </div>
+  </div>
+</section>
+<footer>In Joy · Que Sera, Sera · Travel Content Creator</footer>
 </body>
 </html>
