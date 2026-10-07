@@ -2,85 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>In Joy — Travel Content Creator</title>
-<meta name="description" content="In Joy — cinematic travel stories, mountains, villages, culture, road trips and outdoor adventures.">
 <style>
-:root{--blue:#0a3550;--light:#eef6f9;--line:rgba(255,255,255,.28)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#061a28;color:#fff}
-a{color:inherit;text-decoration:none}
-.hero{
-  min-height:100vh;position:relative;display:flex;align-items:flex-end;padding:0 7vw 9vh;
-  background:linear-gradient(90deg,rgba(3,18,28,.18),rgba(3,18,28,.04)),url("injoy-home-design(4).png") center/cover no-repeat;
-}
-.hero-actions{position:relative;z-index:2;display:flex;gap:14px;flex-wrap:wrap}
-.btn{padding:14px 22px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(8,42,62,.35);backdrop-filter:blur(8px);font-weight:700;transition:.25s}
-.btn.primary{background:#0879c8;border-color:#0879c8}
-.btn:hover{transform:translateY(-2px)}
-.stories{
-  min-height:100vh;padding:100px 7vw;
-  background:linear-gradient(90deg,rgba(3,22,36,.9),rgba(3,22,36,.55)),url("injoy-home-design(4).png") center bottom/cover no-repeat;
-}
-.container{max-width:1150px;margin:auto}
-.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#cfe2eb;margin-bottom:18px}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500}
-h2{font-size:clamp(2.8rem,6vw,5.5rem);line-height:1}
-.lead{max-width:700px;margin-top:24px;font-size:1.1rem;line-height:1.8;color:#e1edf2}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:55px}
-.card{padding:32px;border:1px solid var(--line);border-radius:24px;background:rgba(3,26,42,.48);backdrop-filter:blur(10px)}
-.card h3{font-size:2rem;margin-bottom:14px}
-.card p{line-height:1.75;color:#dce8ed}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.tag{padding:8px 11px;border:1px solid var(--line);border-radius:99px;font-size:.8rem}
-.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.skill{padding:18px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);font-weight:600}
-.social{margin-top:55px;display:flex;gap:12px;flex-wrap:wrap}
-footer{padding:25px 7vw;background:#04131f;text-align:center;color:#c9d8de;font-size:.85rem}
-@media(max-width:800px){.hero{min-height:78vh;padding:0 6vw 6vh;background-position:center top}.grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.stories{padding:75px 6vw}}
-@media(max-width:480px){.hero{min-height:65vh}.skills{grid-template-columns:1fr}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#061a28;color:#fff}a{text-decoration:none;color:inherit}
+.hero{min-height:100vh;position:relative;overflow:hidden;padding:28px 6vw 9vh;display:flex;align-items:flex-end;background:linear-gradient(#12608a 0%,#6da9c6 42%,#173d3d 43%,#0d2927 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:
+radial-gradient(ellipse at 80% 22%,#a8c9dc 0 4%,transparent 28%),
+linear-gradient(160deg,transparent 40%,#345e6c 41% 48%,transparent 49%),
+linear-gradient(165deg,transparent 44%,#224d5a 45% 54%,transparent 55%),
+linear-gradient(180deg,transparent 48%,#153c38 49% 100%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:
+repeating-linear-gradient(135deg,transparent 0 34px,rgba(20,28,29,.9) 35px 43px,transparent 44px 75px),
+linear-gradient(180deg,rgba(11,36,35,.2),#071b24);opacity:.95}
+nav{position:absolute;top:25px;left:6vw;right:6vw;z-index:4;display:flex;justify-content:space-between;align-items:center}.logo{font-size:34px;font-style:italic;font-family:cursive}.links{display:flex;gap:38px;font-size:13px;letter-spacing:2px}.links a:first-child{border-bottom:2px solid #fff;padding-bottom:10px}
+.hero-copy{position:relative;z-index:3;max-width:650px}.eyebrow{font-size:13px;letter-spacing:6px;margin-bottom:18px}.hero h1{font-family:cursive;font-size:clamp(70px,10vw,150px);line-height:.8;margin:0}.tagline{font-family:cursive;font-size:34px;margin:25px 0}.lead{font-size:18px}.buttons{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}.btn{padding:15px 23px;border-radius:30px;border:1px solid #fff;background:rgba(255,255,255,.08);font-weight:bold}.primary{background:#087bc9;border-color:#087bc9}
+.character{position:absolute;z-index:3;right:10%;bottom:0;font-size:170px;filter:drop-shadow(0 12px 8px #0008)}.note{position:absolute;right:4%;top:40%;z-index:3;font-family:cursive;font-size:21px;text-align:center}.scroll{position:absolute;right:3%;bottom:40px;z-index:4}
+.page2{min-height:100vh;padding:110px 7vw;background:linear-gradient(90deg,#061d2b,#174866 60%,#7da9bd);position:relative;overflow:hidden}.page2:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(175deg,transparent,#123b52),repeating-linear-gradient(160deg,transparent 0 50px,#254f64 51px 54px);opacity:.7}.content{position:relative;z-index:2;max-width:1150px;margin:auto}.page2 h2{font:500 clamp(48px,7vw,90px) Georgia;margin:0}.intro{max-width:680px;font-size:18px;line-height:1.8;margin-top:25px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:55px}.card{padding:30px;border:1px solid #ffffff44;border-radius:24px;background:#06223899;backdrop-filter:blur(8px)}.card h3{font:500 34px Georgia;margin:0 0 14px}.card p{line-height:1.7;color:#dce8ed}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{padding:8px 11px;border:1px solid #ffffff44;border-radius:20px;font-size:12px}.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.skill{padding:17px;border:1px solid #ffffff22;border-radius:16px;background:#ffffff12}.social{margin-top:45px}
+footer{text-align:center;padding:24px;background:#03131f;color:#ccd9df}
+@media(max-width:800px){.links{display:none}.character{right:2%;font-size:100px;opacity:.65}.grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.hero{min-height:90vh}}
+@media(max-width:480px){.skills{grid-template-columns:1fr}.hero h1{font-size:76px}.tagline{font-size:26px}}
 </style>
 </head>
 <body>
 <section class="hero" id="home">
-  <div class="hero-actions">
-    <a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank" rel="noopener">▶ Watch My Content</a>
-    <a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank" rel="noopener">◎ Follow Me</a>
-  </div>
+<nav><a class="logo" href="#home">In Joy</a><div class="links"><a href="#home">HOME</a><a href="#journey">THE JOURNEY</a><a href="#stories">THE STORIES</a><a href="#contact">CONTACT</a></div></nav>
+<div class="hero-copy"><div class="eyebrow">TRAVEL CONTENT CREATOR</div><h1>In Joy</h1><div class="tagline">— Que Sera, Sera</div><p class="lead">Turning journeys into stories you can feel.</p><div class="buttons"><a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank">▶ Watch My Content</a><a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank">◎ Follow Me</a></div></div>
+<div class="character">🧑🏻‍🦱🐕</div><div class="note">New places.<br>New stories.<br>Same me.</div><div class="scroll">Scroll ↓</div>
 </section>
-<section class="stories" id="stories">
-  <div class="container">
-    <div class="eyebrow">The Journey · The Stories</div>
-    <h2>Travel is more<br>than a destination.</h2>
-    <p class="lead">I create travel stories around mountains, villages, local communities, road trips, camping and outdoor places. My goal is to capture the journey, culture and small moments that help my audience feel like they were there with me.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="eyebrow">Featured Documentary</div>
-        <h3>Eunpyeong Hanok Village</h3>
-        <p>A documentary-style travel story about a village that shows how modernization can exist while keeping historical culture and traditional architecture.</p>
-        <div class="tags"><span class="tag">Culture & History</span><span class="tag">Architecture</span><span class="tag">Travel Documentary</span></div>
-      </article>
-      <article class="card">
-        <div class="eyebrow">What I Create</div>
-        <h3>Stories from the road</h3>
-        <p>Cinematic landscapes, the journey itself, personal experiences, reactions, voice-over storytelling and short-form travel videos.</p>
-        <div class="tags"><span class="tag">Mountain Videos</span><span class="tag">Travel Vlogs</span><span class="tag">Road Trips</span><span class="tag">Camping</span><span class="tag">Nature</span></div>
-      </article>
-    </div>
-    <div style="margin-top:65px">
-      <div class="eyebrow">Creative Skills</div>
-      <div class="skills">
-        <div class="skill">🎥 Video Shooting</div><div class="skill">✂️ Video Editing</div><div class="skill">📸 Photography</div><div class="skill">🎙️ Voice-over</div>
-        <div class="skill">📝 Storytelling</div><div class="skill">🌍 Travel Planning</div><div class="skill">📱 Social Content</div><div class="skill">🎨 Creative Direction</div>
-      </div>
-    </div>
-    <div class="social">
-      <a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank" rel="noopener">YouTube · @injoy</a>
-      <a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank" rel="noopener">Instagram · @itsmerahul-525</a>
-    </div>
-  </div>
-</section>
-<footer>In Joy · Que Sera, Sera · Travel Content Creator</footer>
-</body>
-</html>
+<section class="page2" id="journey"><div class="content"><div class="eyebrow">TRAVEL PHILOSOPHY</div><h2>Beauty is everywhere<br>you just have to notice it.</h2><p class="intro">Not just places, but the people, cultures and little moments that make the journey special. I create travel stories around mountains, villages, local communities, road trips, camping and outdoor places.</p>
+<div class="grid" id="stories"><article class="card"><div class="eyebrow">FEATURED DOCUMENTARY</div><h3>Eunpyeong Hanok Village</h3><p>A documentary about a village that feels like a strong example of modernization while keeping its historical culture and traditional architecture.</p><div class="tags"><span class="tag">Culture & History</span><span class="tag">Architecture</span><span class="tag">Travel Documentary</span></div></article>
+<article class="card"><div class="eyebrow">WHAT I CREATE</div><h3>Stories from the road</h3><p>Cinematic landscapes, the journey itself, personal experiences, voice-over storytelling and short-form travel videos.</p><div class="tags"><span class="tag">Mountains</span><span class="tag">Villages</span><span class="tag">Road Trips</span><span class="tag">Camping</span><span class="tag">Nature</span></div></article></div>
+<div style="margin-top:55px"><div class="eyebrow">CREATIVE SKILLS</div><div class="skills"><div class="skill">🎥 Video Shooting</div><div class="skill">✂️ Video Editing</div><div class="skill">📸 Photography</div><div class="skill">🎙️ Voice-over</div><div class="skill">📝 Storytelling</div><div class="skill">🌍 Travel Planning</div><div class="skill">📱 Social Content</div><div class="skill">🎨 Creative Direction</div></div></div>
+<div class="social" id="contact"><a class="btn primary" href="https://www.youtube.com/@injoy" target="_blank">YouTube · @injoy</a> <a class="btn" href="https://www.instagram.com/itsmerahul-525" target="_blank">Instagram · @itsmerahul-525</a></div>
+</div></section><footer>In Joy · Que Sera, Sera · Travel Content Creator</footer>
+</body></html>
